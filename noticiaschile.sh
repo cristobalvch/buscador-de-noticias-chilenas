@@ -61,9 +61,10 @@ function helpPanel(){
 	echo -e "\t${purpleColour}v)${endColour}${grayColour} Ver ultimas noticias ${endColour}"
 	echo -e "\t${purpleColour}f)${endColour}${grayColour} Filtrar por fecha (formato: yyyy-mm-dd)${endColour}"
         echo -e "\t${purpleColour}p)${endColour}${grayColour} Filtrar por palabra${endColour}"
-        echo -e "\t${purpleColour}e)${endColour}${grayColour} Filtrar por editorial${endColour}"
-        echo -e "\t${purpleColour}u)${endColour}${grayColour} Actualizar ultimas Noticias${endColour}"
-        echo -e "\t${purpleColour}l)${endColour}${grayColour} Listar editoriales disponibles${endColour}"
+        echo -e "\t${purpleColour}m)${endColour}${grayColour} Filtrar por medio digital${endColour}"
+        echo -e "\t${purpleColour}u)${endColour}${grayColour} Actualizar ultimas noticias${endColour}"
+        echo -e "\t${purpleColour}l)${endColour}${grayColour} Listar medios digitales disponibles${endColour}"
+        echo -e "\t${purpleColour}h)${endColour}${grayColour} Mostrar panel de ayuda${endColour}"
 }
 
 
@@ -235,14 +236,14 @@ declare -i parameter_date=0
 declare -i parameter_word=0
 declare -i parameter_editorial=0
 
-while getopts "uvf:p:e:hl" arg; do
+while getopts "uvf:p:m:hl" arg; do
         case $arg in
 		v) let parameter_counter+=1;;
 		u) let parameter_counter+=2;;
                 l) let parameter_counter+=3;;
                 f) dateFilter=$OPTARG; let parameter_date=1;;
                 p) wordFilter=$OPTARG; let parameter_word=1;;
-                e) editorialFilter=$OPTARG; let parameter_editorial=1;;
+                m) medioFilter=$OPTARG; let parameter_medio=1;;
                 h) ;;
         esac
 done
@@ -257,8 +258,8 @@ if [ $parameter_counter -eq 1 ]; then
 		news="$(echo "$news" | grep $wordFilter)"
 		
 	fi
-	if [ $parameter_editorial -eq 1 ]; then		
-		news="$(echo "$news" | grep $editorialFilter)"
+	if [ $parameter_medio -eq 1 ]; then		
+		news="$(echo "$news" | grep $medioFilter)"
 	fi
 	if [ $parameter_date -eq 1 ]; then		
 		news="$(echo "$news" | grep $dateFilter)"
