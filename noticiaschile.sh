@@ -234,9 +234,9 @@ news=$1
 declare -i parameter_counter=0
 declare -i parameter_date=0
 declare -i parameter_word=0
-declare -i parameter_editorial=0
+declare -i parameter_medio=0
 
-while getopts "uvf:p:m:hl" arg; do
+while getopts "vulhp:m:f:" arg; do
         case $arg in
 		v) let parameter_counter+=1;;
 		u) let parameter_counter+=2;;
