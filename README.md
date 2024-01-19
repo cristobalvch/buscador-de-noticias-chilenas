@@ -1,4 +1,4 @@
-
+<h1 align="center">Buscador de Noticias Chilenas</h1>
 
 <b>noticiaschile.sh</b> busca las ultimas noticias publicadas por distintos medios digitales chilenos y las visualiza en la shell.
 
