@@ -17,6 +17,13 @@ Proximamente se irán agregando nuevos medios.
 ¿Cómo ejecutar noticiaschile.sh?
 ======
 
+Instalar dependencias necesarias
+
+```console
+sudo apt -y install libxml2-utils
+```
+
+
 Mostrar panel de ayuda:
 
 <img width="361" alt="image" src="https://github.com/cristobalvch/buscador-de-noticias-chilenas/assets/59963983/6c94729b-1692-4d9c-9915-8cd27abccbec">
